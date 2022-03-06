@@ -1,6 +1,15 @@
 - name: Hello World Sample
   hosts: all
   tasks:
+    - name: Ensure folder exists
+      file:
+        path: "keys"
+        state: "directory"
+    - name: ls folder
+      register: lsout
+      command:
+        cmd: ls -l
+    - debug: var=lsout.stdout
     - name: Hello Message
       debug:
         msg: "Hello World!"
