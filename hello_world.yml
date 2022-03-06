@@ -7,7 +7,7 @@
         state: "directory"
     - name: pwd folder
       command:
-        cmd: pwd && ls -l
+        cmd: bash -c "pwd && ls -l"
     - name: Hello Message
       debug:
         msg: "Hello World!"
