@@ -5,11 +5,9 @@
       file:
         path: "keys"
         state: "directory"
-    - name: ls folder
-      register: lsout
+    - name: pwd folder
       command:
-        cmd: ls -l
-    - debug: var=lsout.stdout
+        cmd: pwd && ls -l
     - name: Hello Message
       debug:
         msg: "Hello World!"
